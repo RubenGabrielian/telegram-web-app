@@ -33,7 +33,7 @@ function App() {
       </p>
         {/* Here we add our button with alert callback */}
         <div className="card">
-            <button onClick={() => WebApp.showAlert(`Hello World! Current count is ${count}`)}>
+            <button onClick={() => WebApp.showAlert(WebApp.initDataUnsafe.user.first_name)}>
                 Show Alert
             </button>
         </div>

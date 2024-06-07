@@ -28,7 +28,7 @@ function App() {
     };
 
     useEffect(() => {
-        console.log(telegramUser)
+        console.log(WebApp?.WebAppInitData)
         axios.post('https://bot.pinetech.org/api/register-user', {
             ...telegramUser,
             referal: WebApp?.initDataUnsafe?.start_param || 2

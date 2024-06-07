@@ -27,11 +27,10 @@ function App() {
         username: 'rubenTest'
     };
 
-    console.log(WebApp?.WebAppInitData)
 
 
     useEffect(() => {
-        console.log(WebApp?.WebAppInitData)
+        console.log(WebApp)
         axios.post('https://bot.pinetech.org/api/register-user', {
             ...telegramUser,
             referal: WebApp?.initDataUnsafe?.start_param || 2

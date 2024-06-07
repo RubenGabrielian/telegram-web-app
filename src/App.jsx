@@ -30,7 +30,6 @@ function App() {
             <>
                 <div>
                     <h1>{WebApp?.WebAppInitData?.user?.first_name || 'Ruben'}</h1>
-                    <h2>{userId}</h2>
                     <h2>Your balance <span>{formatNumber(user?.count)}</span></h2>
                     <Tree timerLeft={timeLeft} setTimeLeft={setTimeLeft} user={telegramUser} setUser={setUser} />
                 </div>

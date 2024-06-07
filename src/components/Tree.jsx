@@ -26,6 +26,7 @@ export default function Tree({timerLeft, setTimeLeft, user, setUser}) {
                     return prevTime - 1;
                 } else {
                     clearInterval(timerInterval); // Clear the interval when the timer reaches 0
+                    setAnimate(false)
                     return 0;
                 }
             });
@@ -50,7 +51,7 @@ export default function Tree({timerLeft, setTimeLeft, user, setUser}) {
 
     return (
         <div>
-            <img src={threeImg} width={'100%'} alt="" className={animate ? 'image-animation' : ''}/>
+            <img src={threeImg} width={'100%'} alt="" className={animate ? 'image-animation tree' : 'tree'}/>
             {
                 timerLeft < 1 ? (
                     <button className={'claim-button'} disabled={timerLeft > 0} onClick={handleClaim}>Claim</button>

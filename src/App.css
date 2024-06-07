@@ -56,6 +56,9 @@
 
 .image-animation {
     animation: blackWhiteToColor 3s linear forwards;
+
+}
+.tree {
     max-height: 400px;
     object-fit: contain;
 }

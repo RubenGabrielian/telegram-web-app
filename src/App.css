@@ -55,7 +55,7 @@
 }
 
 .image-animation {
-    animation: blackWhiteToColor 10s linear forwards;
+    animation: blackWhiteToColor 3s linear forwards;
     max-height: 400px;
     object-fit: contain;
 }

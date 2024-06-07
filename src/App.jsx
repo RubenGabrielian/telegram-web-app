@@ -11,7 +11,7 @@ function App() {
     const [timeLeft, setTimeLeft] = useState(TIMER); // Initialize timer with 60 seconds
     const userId = WebApp?.WebAppUser?.id || 222;
     const [user, setUser] = useState(null);
-    const telegramUser = WebApp?.initDataUnsafe?.user || {
+    const telegramUser = WebApp?.WebAppUser?.id || {
         id: 222,
         first_name: 'Ruben',
         last_name: 'Gabrielyan',

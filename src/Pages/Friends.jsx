@@ -19,7 +19,7 @@ export default function Friends () {
     return (
        loading ? <Loading/> : (
            <div>
-               <h2>Invite Friends</h2>
+               <h2>Invite Friends 👥</h2>
                <button>
                    <a href={`https://telegram.me/share/url?url=t.me/tree_claimer_bot/app?startapp=${WebApp?.initDataUnsafe?.user?.id}`}>Invite</a>
                </button>
@@ -30,7 +30,7 @@ export default function Friends () {
                        referals?.map((referal) => (
                            <li key={referal?.id}>
                                <div className="avatar">{referal?.first_name.charAt(0)}</div>
-                               <div className="name">{referal?.first_name} ${referal?.last_name}</div>
+                               <div className="name">{referal?.first_name} {referal?.last_name} 🎉</div>
                            </li>
                        ))
                    }

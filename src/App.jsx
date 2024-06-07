@@ -20,12 +20,7 @@ function App() {
     });
 
 
-    const telegramUser = WebApp?.initDataUnsafe?.user || {
-        id: 222,
-        first_name: 'Ruben',
-        last_name: 'Gabrielyan',
-        username: 'rubenTest'
-    };
+    const telegramUser = WebApp?.initDataUnsafe?.user;
 
 
 

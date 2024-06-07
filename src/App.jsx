@@ -1,7 +1,8 @@
 import './App.css'
 import threeImg from "../public/three-removebg.png";
 import {useEffect, useState} from "react";
-import {MainButton} from "@twa-dev/sdk/react";
+import WebApp from '@twa-dev/sdk'
+
 
 function App() {
 
@@ -9,6 +10,10 @@ function App() {
     const [timeLeft, setTimeLeft] = useState(60); // Initialize timer with 60 seconds
 
     useEffect(() => {
+
+        WebApp.isExpanded = true;
+
+
         const animationTimer = setTimeout(() => {
             setAnimate(true);
         }, 1000); // Start the animation after 1 second
@@ -39,7 +44,6 @@ function App() {
                 <h2>Your balance <span>4000</span></h2>
                 <div className="timer">Time left: {timeLeft}s</div>
                 <img src={threeImg} width={'100%'} alt="" className={animate ? 'image-animation' : ''}/>
-                <MainButton onClick={()=>alert()} text={'Claim'}/>
             </div>
         </>
     )

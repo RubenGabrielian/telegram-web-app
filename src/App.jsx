@@ -30,12 +30,13 @@ function App() {
 
 
     useEffect(() => {
-        console.log(WebApp.initDataUnsafe.user)
         axios.post('https://bot.pinetech.org/api/register-user', {
             ...telegramUser,
             referal: WebApp?.initDataUnsafe?.start_param || 2
         }).then((res) => {
             setUser(res.data);
+        }).catch((e)=>{
+            alert(JSON.stringify(e))
         })
     }, []);
 

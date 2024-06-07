@@ -3,9 +3,7 @@ import { initUtils } from '@tma.js/sdk';
 const utils = initUtils();
 
 export default function Friends () {
-    const handleInvite = () => {
-        utils.shareURL('t.me/tree_claimer_bot/app', 'Look! Some cool app here!');
-    }
+  
     return (
         <div>
             <h2>Friends</h2>

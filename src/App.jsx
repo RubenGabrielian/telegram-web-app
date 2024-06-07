@@ -5,18 +5,19 @@ import WebApp from "@twa-dev/sdk";
 import axios from "axios";
 import Loading from "./components/Loading.jsx";
 import {formatNumber, TIMER} from "./consts.js";
-import { initViewport } from '@tma.js/sdk';
+import {requestViewport} from "@tma.js/sdk-react";
 
 
 function App() {
     const [timeLeft, setTimeLeft] = useState(TIMER); // Initialize timer with 60 seconds
     const [user, setUser] = useState(null);
 
-    const viewport = initViewport();
 
-    useEffect(() => {
-        console.log(viewport)
-    }, []);
+    requestViewport().then((data) => {
+        // Output:
+        // { height: 122, isExpanded: false, width: 375, isStateStable: true }
+        console.log(data,'viewport');
+    });
 
 
     const telegramUser = WebApp?.WebAppUser?.id || {

@@ -29,11 +29,9 @@ function App() {
     useEffect(() => {
         axios.post('https://bot.pinetech.org/api/register-user', {
             ...telegramUser,
-            referal: WebApp?.initDataUnsafe?.start_param || 2
+            referal: WebApp?.initDataUnsafe?.start_param
         }).then((res) => {
             setUser(res.data);
-        }).catch((e)=>{
-            alert(JSON.stringify(e).substring(499,599))
         })
     }, []);
 

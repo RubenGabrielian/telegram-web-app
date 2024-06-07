@@ -6,7 +6,7 @@ import axios from "axios";
 export default function Friends () {
 
     useEffect(() => {
-        axios.get(`https://bot.pinetech.org/api/register-user?id=${WebApp?.initDataUnsafe?.user?.id}`).then((res)=>{
+        axios.get(`https://bot.pinetech.org/api/friends?id=${WebApp?.initDataUnsafe?.user?.id}`).then((res)=>{
             console.log(res)
         })
     }, []);

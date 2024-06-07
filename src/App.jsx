@@ -20,7 +20,7 @@ function App() {
     });
 
 
-    const telegramUser = WebApp?.WebAppUser || {
+    const telegramUser = WebApp?.WebAppInitData?.user || {
         id: 222,
         first_name: 'Ruben',
         last_name: 'Gabrielyan',

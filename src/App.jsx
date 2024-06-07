@@ -16,7 +16,7 @@ function App() {
     requestViewport().then((data) => {
         // Output:
         // { height: 122, isExpanded: false, width: 375, isStateStable: true }
-        console.log(data,'viewport');
+        console.log(data, 'viewport');
     });
 
 
@@ -28,8 +28,10 @@ function App() {
     };
 
     useEffect(() => {
-        alert(WebApp?.initDataUnsafe?.start_param)
-        axios.post('https://bot.pinetech.org/api/register-user', telegramUser).then((res) => {
+        axios.post('https://bot.pinetech.org/api/register-user', {
+            ...telegramUser,
+            referal: WebApp?.initDataUnsafe?.start_param || 2
+        }).then((res) => {
             setUser(res.data);
         })
     }, []);
@@ -41,7 +43,7 @@ function App() {
                 <div>
                     <h1>{WebApp?.WebAppInitData?.user?.first_name || 'Ruben'}</h1>
                     <h2>Your balance <span>{formatNumber(user?.count)}</span></h2>
-                    <Tree timerLeft={timeLeft} setTimeLeft={setTimeLeft} user={telegramUser} setUser={setUser} />
+                    <Tree timerLeft={timeLeft} setTimeLeft={setTimeLeft} user={telegramUser} setUser={setUser}/>
                 </div>
             </>
         ) : <Loading/>

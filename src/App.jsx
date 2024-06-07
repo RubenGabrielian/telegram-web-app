@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import WebApp from '@twa-dev/sdk'
 
 
+
 function App() {
 
     const [animate, setAnimate] = useState(true);
@@ -11,7 +12,8 @@ function App() {
 
     useEffect(() => {
 
-        WebApp.isExpanded = true;
+        WebApp.ready();
+        WebApp.expand();
 
 
         const animationTimer = setTimeout(() => {

@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Tasks from "./Pages/Tasks.jsx";
 import Menu from "./components/Menu.jsx";
 import Friends from "./Pages/Friends.jsx";
+import { Analytics } from "@vercel/analytics/react"
 
 WebApp.ready();
 
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path={'/friends'}  element={<Friends/>} />
             </Routes>
             <Menu />
+            <Analytics />
         </BrowserRouter>
     </React.StrictMode>,
 )

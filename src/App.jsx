@@ -27,6 +27,9 @@ function App() {
         username: 'rubenTest'
     };
 
+    console.log(WebApp?.WebAppInitData)
+
+
     useEffect(() => {
         console.log(WebApp?.WebAppInitData)
         axios.post('https://bot.pinetech.org/api/register-user', {

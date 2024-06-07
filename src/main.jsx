@@ -6,6 +6,7 @@ import WebApp from '@twa-dev/sdk'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Tasks from "./Pages/Tasks.jsx";
 import Menu from "./components/Menu.jsx";
+import Friends from "./Pages/Friends.jsx";
 
 WebApp.ready();
 
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Routes>
                 <Route path={'/'} index element={<App/>} />
                 <Route path={'/tasks'}  element={<Tasks/>} />
+                <Route path={'/friends'}  element={<Friends/>} />
             </Routes>
             <Menu />
         </BrowserRouter>

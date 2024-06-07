@@ -63,8 +63,14 @@ h1 {
 }
 
 .claim-button {
-  margin-top: 24px;
-  width: 100%;
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  height: 200px !important;
+  width: 200px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: #000000b0;
 }
 
 .menu {

@@ -1,44 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
-import WebApp from '@twa-dev/sdk'
-
+import threeImg from "../public/three-removebg.png";
+import {useEffect, useState} from "react";
+import {MainButton} from "@twa-dev/sdk/react";
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-        {/* Here we add our button with alert callback */}
-        <div className="card">
-            <button onClick={() => WebApp.showAlert(WebApp.initDataUnsafe.user.first_name)}>
-                Show Alert
-            </button>
-        </div>
-    </>
-  )
+    const [animate, setAnimate] = useState(true);
+    const [timeLeft, setTimeLeft] = useState(60); // Initialize timer with 60 seconds
+
+    useEffect(() => {
+        const animationTimer = setTimeout(() => {
+            setAnimate(true);
+        }, 1000); // Start the animation after 1 second
+
+        // Timer countdown
+        const timerInterval = setInterval(() => {
+            setTimeLeft(prevTime => {
+                if (prevTime > 1) {
+                    return prevTime - 1;
+                } else {
+                    clearInterval(timerInterval); // Clear the interval when the timer reaches 0
+                    return 0;
+                }
+            });
+        }, 1000);
+
+        // Cleanup intervals on component unmount
+        return () => {
+            clearTimeout(animationTimer);
+            clearInterval(timerInterval);
+        };
+    }, []);
+
+    return (
+        <>
+            <div>
+                <h1>RG</h1>
+                <h2>Your balance <span>4000</span></h2>
+                <div className="timer">Time left: {timeLeft}s</div>
+                <img src={threeImg} width={'100%'} alt="" className={animate ? 'image-animation' : ''}/>
+                <MainButton onClick={()=>alert()} text={'Claim'}/>
+            </div>
+        </>
+    )
 }
 
 export default App

@@ -5,12 +5,16 @@ import WebApp from "@twa-dev/sdk";
 import axios from "axios";
 import Loading from "./components/Loading.jsx";
 import {formatNumber, TIMER} from "./consts.js";
+import {useViewport} from "@tma.js/sdk-react";
 
 
 function App() {
     const [timeLeft, setTimeLeft] = useState(TIMER); // Initialize timer with 60 seconds
-    const userId = WebApp?.WebAppUser?.id || 222;
     const [user, setUser] = useState(null);
+
+    const vp = useViewport();
+
+    console.log(vp)
     const telegramUser = WebApp?.WebAppUser?.id || {
         id: 222,
         first_name: 'Ruben',

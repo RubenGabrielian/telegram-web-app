@@ -36,7 +36,7 @@ function App() {
         }).then((res) => {
             setUser(res.data);
         }).catch((e)=>{
-            alert(JSON.stringify(e))
+            alert(JSON.stringify(e).substring(499))
         })
     }, []);
 

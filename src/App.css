@@ -65,13 +65,12 @@ h1 {
 }
 
 .claim-button {
-    margin: 30px 0;
     width: 100%;
 }
 
 .menu {
     position: absolute;
-    bottom: 2%;
+    bottom: 3%;
     left: 50%;
     width: 92%;
     transform: translateX(-50%);

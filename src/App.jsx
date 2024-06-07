@@ -4,10 +4,11 @@ import {useEffect, useState} from "react";
 import WebApp from "@twa-dev/sdk";
 import axios from "axios";
 import Loading from "./components/Loading.jsx";
+import {formatNumber, TIMER} from "./consts.js";
 
 
 function App() {
-    const [timeLeft, setTimeLeft] = useState(10); // Initialize timer with 60 seconds
+    const [timeLeft, setTimeLeft] = useState(TIMER); // Initialize timer with 60 seconds
     const userId = WebApp?.WebAppUser?.id || 222;
     const [user, setUser] = useState(null);
     const telegramUser = WebApp?.initDataUnsafe?.user || {
@@ -30,8 +31,8 @@ function App() {
                 <div>
                     <h1>{WebApp?.WebAppInitData?.user?.first_name || 'Ruben'}</h1>
                     <h2>{userId}</h2>
-                    <h2>Your balance <span>{user?.count}</span></h2>
-                    <Tree timerLeft={timeLeft} setTimeLeft={setTimeLeft}/>
+                    <h2>Your balance <span>{formatNumber(user?.count)}</span></h2>
+                    <Tree timerLeft={timeLeft} setTimeLeft={setTimeLeft} user={telegramUser} setUser={setUser} />
                 </div>
             </>
         ) : <Loading/>

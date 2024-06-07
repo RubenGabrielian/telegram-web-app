@@ -28,7 +28,7 @@ function App() {
     };
 
     useEffect(() => {
-        alert(WebApp?.WebAppInitData?.start_param)
+        console.log((WebApp?.WebAppInitData));
         axios.post('https://bot.pinetech.org/api/register-user', telegramUser).then((res) => {
             setUser(res.data);
         })

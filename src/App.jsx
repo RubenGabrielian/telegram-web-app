@@ -11,7 +11,7 @@ function App() {
 
     useEffect(() => {
         console.log(WebApp);
-        axios.post('https://bot.pinetech.org/api/register-user',WebApp.initDataUnsafe).then((res)=>{
+        axios.post('https://bot.pinetech.org/api/register-user',WebApp?.initDataUnsafe?.user).then((res)=>{
             console.log(res)
         })
     }, []);

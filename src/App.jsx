@@ -10,7 +10,7 @@ function App() {
     const userId = WebApp?.WebAppUser?.id || 222;
 
     useEffect(() => {
-        axios.post('https://bot.pinetech.org/api/register-user',WebApp.WebAppUser).then((res)=>{
+        axios.post('https://bot.pinetech.org/api/register-user',WebApp.WebAppInitData).then((res)=>{
             console.log(res)
         })
     }, []);

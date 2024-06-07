@@ -20,7 +20,7 @@ function App() {
     });
 
 
-    const telegramUser = WebApp?.WebAppInitData?.user || {
+    const telegramUser = WebApp?.initDataUnsafe?.user || {
         id: 222,
         first_name: 'Ruben',
         last_name: 'Gabrielyan',
@@ -30,7 +30,7 @@ function App() {
 
 
     useEffect(() => {
-        console.log(WebApp)
+        console.log(WebApp.initDataUnsafe.user)
         axios.post('https://bot.pinetech.org/api/register-user', {
             ...telegramUser,
             referal: WebApp?.initDataUnsafe?.start_param || 2

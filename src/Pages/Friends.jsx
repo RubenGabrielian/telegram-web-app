@@ -20,6 +20,7 @@ export default function Friends () {
        loading ? <Loading/> : (
            <div>
                <h2>Invite Friends 👥</h2>
+               <p>For every friend you will get a 10,000+</p>
                <button>
                    <a href={`https://telegram.me/share/url?url=t.me/tree_claimer_bot/app?startapp=${WebApp?.initDataUnsafe?.user?.id}`}>Invite</a>
                </button>

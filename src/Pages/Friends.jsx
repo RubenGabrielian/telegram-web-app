@@ -4,12 +4,12 @@ const utils = initUtils();
 
 export default function Friends () {
     const handleInvite = () => {
-        utils.shareURL('t.me/tree_claimer_bot/app?ref=1212121', 'Look! Some cool app here!');
+        utils.shareURL('t.me/tree_claimer_bot/app', 'Look! Some cool app here!');
     }
     return (
         <div>
             <h2>Friends</h2>
-            <button onClick={handleInvite}>Invite</button>
+            <a href={`https://telegram.me/share/url?url=t.me/tree_claimer_bot/app?startapp=12121212`}>Invite</a>
         </div>
     )
 }

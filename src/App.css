@@ -54,7 +54,7 @@
 
 .image-animation {
   animation: blackWhiteToColor 10s linear forwards;
-  max-height: 300px;
+  max-height: 400px;
   object-fit: contain;
 }
 
@@ -65,4 +65,31 @@ h1 {
 .claim-button {
   margin-top: 24px;
   width: 100%;
+}
+
+.menu {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  width: 92%;
+  transform: translateX(-50%);
+  ul {
+    list-style: none;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0;
+    li {
+      a {
+        background: #1a1a1a;
+        padding: 18px 30px;
+        border-radius: 12px;
+        color: white;
+        outline: none;
+        &.active {
+          background: #0c793a30 !important;
+        }
+      }
+    }
+  }
 }

@@ -2,6 +2,7 @@ import './App.css'
 import Tree from "./components/Tree.jsx";
 import {useState} from "react";
 import WebApp from "@twa-dev/sdk";
+import Menu from "./components/Menu.jsx";
 
 
 function App() {

@@ -2,6 +2,8 @@
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .logo {
@@ -52,8 +54,15 @@
 
 .image-animation {
   animation: blackWhiteToColor 60s linear forwards;
+  max-height: 500px;
+  object-fit: contain;
 }
 
 h1 {
   margin: 0;
+}
+
+.claim-button {
+  margin-top: 24px;
+  width: 100%;
 }
